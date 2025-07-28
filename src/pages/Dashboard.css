@@ -1,0 +1,261 @@
+.dashboard-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100vw;
+    padding: 40px;
+    box-sizing: border-box;
+    background: url('./background.png') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+}
+
+.dashboard-left {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+}
+
+.profile-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #20cccf;
+    margin-bottom: 20px;
+    margin-left: 0;
+    display: block;
+}
+
+.profile-name {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+.profile-desc {
+    font-size: 15px;
+    opacity: 0.9;
+    margin-bottom: 5px;
+}
+
+.profile-des {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-bottom: 2px;
+}
+
+.profile-de {
+    font-size: 12px;
+    opacity: 0.9;
+    margin-bottom: 0px;
+}
+
+.profile-d {
+  font-family: 'Great Vibes', cursive;
+  font-size: 10px;
+  margin-left: 4px;
+  margin-bottom: 0px;
+}
+
+.contact-btn {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    padding: 10px 20px;
+    background-color: #20cccf;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contact-btn:hover {
+    background-color: #17b3b5;
+}
+
+.dashboard-center {
+    flex-grow: 1;
+
+}
+
+.dashboard-right {
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding-left: 30px;
+    box-sizing: border-box;
+}
+
+.top-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.menu {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #20cccf;
+}
+
+.cv-btn {
+    background-color: transparent;
+    color: white;
+    border: 2px solid #20cccf;
+    padding: 8px 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cv-btn:hover {
+    background-color: #000000;
+    color: #000;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    scroll-behavior: auto;
+    padding: 0px;
+    margin-top: 0px;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-img {
+    height: 550px;
+    border-radius: 10px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .dashboard-left {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-name {
+        font-size: 22px;
+    }
+
+    .profile-desc {
+        font-size: 14px;
+    }
+
+    .dashboard-center {
+        display: none;
+    }
+
+    .contact-btn {
+        display: none;
+    }
+
+    .dashboard-right {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .carousel {
+        height: auto;
+        overflow-x: scroll;
+        padding-bottom: 10px;
+    }
+
+    .carousel-img {
+        height: 220px;
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    .cv-btn {
+        display: none;
+    }
+}
+
+.hamburger-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 15px;
+    background: none;
+    border: none;
+    color: #fff;
+    z-index: 1001;
+    display: none;
+    cursor: pointer;
+}
+
+.mobile-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 240px;
+    background-color: #062727d9;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.mobile-sidebar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+.mobile-sidebar a:hover {
+    color: #20cccf;
+}
+
+@media (max-width: 768px) {
+    .hamburger-btn {
+        display: block;
+    }
+
+    .top-menu {
+        display: none;
+    }
+}

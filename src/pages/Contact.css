@@ -1,0 +1,238 @@
+/* Estrutura geral */
+.contact-page {
+    background: linear-gradient(to right, #0c0c12 60%, #082f32 100%);
+    color: white;
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+}
+
+/* Menu superior */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 60px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-circle {
+    width: 30px;
+    height: 30px;
+    background-color: #00e0ff;
+    border-radius: 50%;
+    color: black;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-text {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.nav {
+    display: flex;
+    gap: 24px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.download-btn {
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Conteúdo principal */
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 60px;
+    gap: 60px;
+}
+
+.left-side {
+    flex: 1;
+}
+
+.left-side h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.left-side h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.left-side p {
+    margin: 4px 0;
+}
+
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: white;
+}
+
+.social-links img {
+    width: 32px;
+    height: 32px;
+}
+
+/* Formulário */
+.right-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+
+.input-group input,
+.input-group textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    padding: 8px 0;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+}
+
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+    color: #ccc;
+}
+
+.submit-button {
+   background-color: #20cccf;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: fit-content;
+    align-self: flex-end;
+}
+
+.submit-button:hover {
+    background-color: #20cccf9d;
+}
+
+@media (max-width: 1024px) {
+    .contact-content {
+        flex-direction: column;
+        padding: 40px;
+        gap: 40px;
+    }
+
+    .left-side h1 {
+        font-size: 2rem;
+    }
+
+    .right-side {
+        gap: 24px;
+    }
+}
+
+/* Mobile (até 768px) */
+@media (max-width: 768px) {
+    .contact-content {
+        padding: 20px;
+        gap: 30px;
+    }
+
+    .left-side h1 {
+        font-size: 1.8rem;
+    }
+
+    .left-side h3 {
+        font-size: 1.2rem;
+    }
+
+    .social-links a {
+        font-size: 0.95rem;
+    }
+
+    .social-links img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .input-group input,
+    .input-group textarea {
+        font-size: 0.95rem;
+    }
+
+    .input-group label {
+        font-size: 0.95rem;
+    }
+
+    .top-menu .section-title {
+        font-size: 1.1rem;
+    }
+}
+
+/* Mobile muito pequeno (até 480px) */
+@media (max-width: 480px) {
+    .left-side h1 {
+        font-size: 1.5rem;
+    }
+
+    .left-side h3 {
+        font-size: 1rem;
+    }
+
+    .social-links {
+        gap: 12px;
+    }
+
+    .social-links img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .input-group input,
+    .input-group textarea {
+        font-size: 0.9rem;
+    }
+
+    .contact-content {
+        padding: 16px;
+        gap: 20px;
+    }
+}

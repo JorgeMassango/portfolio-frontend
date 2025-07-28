@@ -1,0 +1,271 @@
+/* --- BASE PAGE --- */
+.hability-page {
+  padding: 0;
+  background-color: #030b0b;
+  color: white;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+/* --- TITLES --- */
+.section-title {
+  font-size: 24px;
+  margin: 24px 0 0 24px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.section-title .highlight {
+  font-size: 24px;
+  margin-bottom: 0rem;
+}
+
+/* --- SKILLS GRID --- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px 24px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+@media (min-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .skills-grid {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+/* --- SKILL CARD --- */
+.skill-card {
+  background-color: #2d2d3f;
+  border-radius: 12px;
+  padding: 16px;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 120px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .skill-card:hover {
+    transform: scale(1.05);
+  }
+}
+
+.skill-icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+/* --- QUALIFICATIONS --- */
+.additional-skills-section {
+  background-color: #2d2d3f;
+  border-radius: 12px;
+  margin: 20px 40px;
+  padding: 24px;
+}
+
+.additional-skills-section h3 {
+  color: #20cccf;
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+
+.additional-content {
+  color: #f0f0f0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.qualification-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .qualification-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .qualification-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.qualification-item {
+  background-color: #252538;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.qualification-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.qualification-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.qualification-item h4 {
+  color: #20cccf;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.qualification-item p {
+  color: #f0f0f0;
+  font-size: 14px;
+}
+
+/* --- RESPONSIVE SKILL GRID --- */
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .skill-card {
+    padding: 8px;
+    min-height: 90px;
+    border-radius: 8px;
+  }
+
+  .skill-icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 4px;
+  }
+
+  .skill-card p,
+  .skill-card span,
+  .skill-card h3 {
+    font-size: 12px;
+  }
+
+  .section-title {
+    font-size: 20px;
+    margin: 20px 12px;
+  }
+
+  .section-title .highlight {
+    font-size: 24px;
+  }
+}
+
+/* --- TOP MENU --- */
+.top-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background-color: transparent;
+  position: relative;
+}
+
+.top-menu .left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.top-menu .right ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.top-menu .right ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.top-menu .right ul li a:hover {
+  color: #20cccf;
+}
+
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  margin-left: auto;
+  color: white;
+}
+
+/* --- OVERLAY --- */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+}
+
+/* --- RESPONSIVE MENU --- */
+@media (max-width: 768px) {
+  .top-menu {
+    flex-wrap: wrap;
+  }
+
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 16px;
+    right: 24px;
+  }
+
+  .top-menu .right {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    height: 100vh;
+    width: 200px;
+    background-color: #1e1e2f;
+    padding: 60px 20px;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    touch-action: pan-y;
+  }
+
+  .top-menu .right.open {
+    right: 0;
+  }
+
+  .top-menu .right ul {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .cv-button {
+    padding: 8px 12px;
+  }
+}

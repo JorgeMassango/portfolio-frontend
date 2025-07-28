@@ -1,0 +1,270 @@
+.about-container {
+  padding: 1rem 1.5rem;
+  max-width: 1200px;
+  margin: auto;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+}
+
+.top-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.menu-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #0ff;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.highlight {
+  display: flex;
+  align-items: center;
+}
+
+nav.right ul {
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+nav.right ul li a {
+  color: #0ff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav.right ul li a:hover {
+  color: #66ffff;
+}
+
+.overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 10;
+}
+
+/* MOBILE-FIRST LAYOUT */
+
+.sobre-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.sobre-text {
+  flex: none;
+  min-width: auto;
+  font-size: 1rem;
+}
+
+.sobre-text p {
+  margin-bottom: 1rem;
+}
+
+.sobre-img {
+  flex: none;
+  text-align: center;
+}
+
+.sobre-img img {
+  width: 80vw;
+  max-width: 300px;
+  border-radius: 12px;
+  margin-bottom: 0.5rem;
+}
+
+.sobre-img h3 {
+  margin: 0.3rem 0 0.2rem 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.sobre-img p {
+  font-size: 1rem;
+  font-style: italic;
+  color: #aaa;
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.section h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #0ff;
+  padding-bottom: 0.25rem;
+  max-width: max-content;
+}
+
+/* Barras de habilidades e idiomas */
+.bar-wrapper {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.bar-wrapper span {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+}
+
+/* Para barras, em mobile, a barra fica menor para facilitar leitura */
+.bar {
+  background: #222;
+  height: 22px;
+  border-radius: 6px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.bar-fill {
+  background: #0ff;
+  height: 100%;
+  text-align: right;
+  padding-right: 8px;
+  color: #000;
+  font-weight: 700;
+  font-size: 0.85rem;
+  border-radius: 6px 0 0 6px;
+}
+
+/* Listas com bullets */
+.bullets li {
+  margin: 0.4rem 0;
+  font-size: 1rem;
+}
+
+/* Timeline */
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.timeline li {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.timeline .year {
+  font-weight: 700;
+  color: #0ff;
+  min-width: 70px;
+  font-size: 1rem;
+}
+
+/* Disponibilidade */
+.section ul {
+  padding-left: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.section ul li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+/* MEDIA QUERIES PARA DESKTOP */
+
+@media (max-width: 767px) {
+  .sobre-img {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .about-container {
+    padding: 2rem 3rem;
+  }
+
+  .sobre-section {
+    flex-direction: row;
+    gap: 3rem;
+  }
+
+  .sobre-text, .sobre-img {
+    flex: 1;
+    min-width: 300px;
+  }
+
+  .sobre-text p {
+    font-size: 1.1rem;
+  }
+
+  .sobre-img img {
+    max-width: 350px;
+  }
+
+  .section h2 {
+    font-size: 1.6rem;
+  }
+
+  .bar-wrapper {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .bar-wrapper span {
+    width: 150px;
+    margin-bottom: 0;
+    font-size: 1rem;
+  }
+
+  .bar {
+    flex: 1;
+    height: 26px;
+  }
+
+  .bar-fill {
+    font-size: 1rem;
+    padding-right: 12px;
+  }
+
+  .bullets li {
+    font-size: 1.1rem;
+  }
+
+  .timeline li {
+    gap: 1rem;
+  }
+
+  .timeline .year {
+    min-width: 100px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-container {
+    padding: 2rem 4rem;
+  }
+}
