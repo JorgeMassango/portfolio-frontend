@@ -1,7 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
 import { FaReact, FaNodeJs, FaDatabase, FaJsSquare } from 'react-icons/fa';
-import { SiPostgresql, SiSupabase, SiNextdotjs, SiTypescript } from 'react-icons/si';
+import { SiPostgresql, SiSupabase, SiNextdotjs, SiTypescript, SiPrisma, SiTailwindcss, SiJsonwebtokens, SiGoogle } from 'react-icons/si';
+import {
+  FcMenu,
+  FcWorkflow,
+} from 'react-icons/fc';
 import styles from './Project.module.css';
 
 interface ProjectData {
@@ -11,57 +16,90 @@ interface ProjectData {
   technologies: string;
   image: string;
   category: string;
+  url: string;
 }
 
 const Project: React.FC = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const touchStartX = useRef(0);
+
+  useEffect(() => {
+    const handleTouchStart = (e: TouchEvent) => {
+      touchStartX.current = e.touches[0].clientX;
+    };
+
+    const handleTouchEnd = (e: TouchEvent) => {
+      const touchEndX = e.changedTouches[0].clientX;
+      const deltaX = touchStartX.current - touchEndX;
+
+      if (menuOpen && deltaX < -50) {
+        setMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('touchstart', handleTouchStart);
+    window.addEventListener('touchend', handleTouchEnd);
+
+    return () => {
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchend', handleTouchEnd);
+    };
+  }, [menuOpen]);
+
   const projects: ProjectData[] = [
     {
       id: 1,
       title: "Machine Sales",
-      description: "Módulo completo para visualização e gestão de carros à venda. Possui sistema de agendamento de visitas, painel administrativo e galeria de veículos com ficha técnica",
-      technologies: "React, NestJS, PostgreSQL, Supabase, JWT",
-      image: "/api/placeholder/400/250",
-      category: "web"
+      description: "Plataforma moderna para venda de veículos com galeria interativa, ficha técnica detalhada, sistema de agendamento de visitas, login com autenticação JWT e painel administrativo completo.",
+      technologies: "React, NestJS, TypeScript, PostgreSQL, Supabase, Prisma, Tailwind, JWT, reCAPTCHA",
+      image: "/machine.png",
+      category: "web",
+      url: "https://machine-sales-frontend.vercel.app/"
     },
     {
       id: 2,
       title: "Machine Sales",
       description: "Módulo completo para visualização e gestão de carros à venda. Possui sistema de agendamento de visitas, painel administrativo e galeria de veículos com ficha técnica",
       technologies: "React, NestJS, PostgreSQL, Supabase, JWT",
-      image: "/api/placeholder/400/250",
-      category: "web"
+      image: "/projecto2.png",
+      category: "web",
+      url: "https://machine-sales-v2.example.com"
     },
     {
       id: 3,
       title: "Machine Sales",
       description: "Módulo completo para visualização e gestão de carros à venda. Possui sistema de agendamento de visitas, painel administrativo e galeria de veículos com ficha técnica",
       technologies: "React, NestJS, PostgreSQL, Supabase, JWT",
-      image: "/api/placeholder/400/250",
-      category: "web"
+      image: "/projecto1.png",
+      category: "web",
+      url: "https://machine-sales-v3.example.com"
     },
     {
       id: 4,
       title: "Sistema Educacional",
       description: "Plataforma completa de gestão educacional com sistema de inscrições, painel de controle e acompanhamento de estudantes",
       technologies: "React, Node.js, MongoDB, Express",
-      image: "/api/placeholder/400/250",
-      category: "education"
+      image: "/projecto3.ng",
+      category: "education",
+      url: "https://sistema-educacional.example.com"
     },
     {
       id: 5,
       title: "Blog Pessoal",
       description: "Blog pessoal com sistema de posts, comentários e gestão de conteúdo. Interface moderna e responsiva",
       technologies: "Next.js, TypeScript, Prisma, PostgreSQL",
-      image: "/api/placeholder/400/250",
-      category: "blog"
+      image: "/projecto3",
+      category: "blog",
+      url: "https://blog-pessoal.example.com"
     },
     {
       id: 6,
       title: "Dashboard Analytics",
       description: "Painel administrativo com gráficos interativos, relatórios em tempo real e sistema de usuários",
       technologies: "React, TypeScript, Chart.js, Firebase",
-      image: "/api/placeholder/400/250",
-      category: "dashboard"
+      image: "/projecto3.png",
+      category: "dashboard",
+      url: "https://dashboard-analytics.example.com"
     }
   ];
 
@@ -78,6 +116,17 @@ const Project: React.FC = () => {
       case 'nextjs':
       case 'next.js':
         return <SiNextdotjs />;
+      case 'prisma':
+        return <SiPrisma />;
+      case 'tailwind':
+      case 'tailwindcss':
+        return <SiTailwindcss />;
+      case 'jwt':
+      case 'jsonwebtoken':
+        return <SiJsonwebtokens />;
+      case 'recaptcha':
+      case 'google recaptcha':
+        return <SiGoogle />;
       case 'typescript':
         return <SiTypescript />;
       case 'javascript':
@@ -88,26 +137,36 @@ const Project: React.FC = () => {
   };
 
   return (
-    <motion.div 
+    <motion.div
       className={styles.container}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 2.0 }}
     >
-      <nav className={styles.navbar}>
-        <div className={styles.logo}>
-          <div className={styles.logoIcon}>C</div>
-          <span>Projectos</span>
+      {menuOpen && <div className="overlay" onClick={() => setMenuOpen(false)}></div>}
+
+      <header className="top-menu">
+        <div className="left">
+          {!menuOpen && (
+            <button className="menu-toggle" onClick={() => setMenuOpen(true)}>
+              <FcMenu size={28} />
+            </button>
+          )}
+          <h2 className="section-title">
+            <span className="highlight"><FcWorkflow /></span> Projetos
+          </h2>
         </div>
-        <div className={styles.navLinks}>
-          <a href="/">Home</a>
-          <a href="/habilidades">Habilidades</a>
-          <a href="/sobre">Sobre mim</a>
-          <a href="/contact">Contacto</a>
-        </div>
-        <button className={styles.downloadBtn}>Download CV</button>
-      </nav>
+
+        <nav className={`right ${menuOpen ? 'open' : ''}`}>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">Sobre mim</a></li>
+            <li><a href="/habilidades">Habilidades</a></li>
+            <li><a href="/contact">Contacto</a></li>
+            <li><a href="/JocaCv.pdf" download className="cv-btn">Download CV</a></li>
+          </ul>
+        </nav>
+      </header>
 
       <main className={styles.main}>
         <div className={styles.projectsGrid}>
@@ -121,66 +180,12 @@ const Project: React.FC = () => {
             >
               <div className={styles.projectImage}>
                 <img src={project.image} alt={project.title} />
-                <div className={styles.imageOverlay}>
-                  <div className={styles.overlayContent}>
-                    {project.category === 'web' && (
-                      <div className={styles.carGrid}>
-                        {[...Array(8)].map((_, i) => (
-                          <div key={i} className={styles.carItem}>
-                            <div className={styles.carImage}></div>
-                            <div className={styles.carInfo}>
-                              <div className={styles.carName}></div>
-                              <div className={styles.carPrice}></div>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                    {project.category === 'education' && (
-                      <div className={styles.educationContent}>
-                        <div className={styles.educationHeader}>
-                          <h3>As inscrições para 2035 estão abertas</h3>
-                        </div>
-                        <div className={styles.studentImages}>
-                          <div className={styles.studentGroup}></div>
-                        </div>
-                      </div>
-                    )}
-                    {project.category === 'blog' && (
-                      <div className={styles.blogContent}>
-                        <div className={styles.blogHeader}>
-                          <span>TUDO É PESSOAL, INCLUSIVE ESTE BLOG</span>
-                        </div>
-                        <h2 className={styles.blogTitle}>Trem do Pensar</h2>
-                        <div className={styles.blogMeta}>
-                          <div className={styles.blogDate}></div>
-                          <div className={styles.blogAuthor}></div>
-                        </div>
-                      </div>
-                    )}
-                    {project.category === 'dashboard' && (
-                      <div className={styles.dashboardContent}>
-                        <div className={styles.dashboardHeader}>
-                          <h3>Painel Administrativo</h3>
-                        </div>
-                        <div className={styles.dashboardCharts}>
-                          <div className={styles.chart}></div>
-                          <div className={styles.statsGrid}>
-                            <div className={styles.stat}></div>
-                            <div className={styles.stat}></div>
-                            <div className={styles.stat}></div>
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                </div>
               </div>
-              
+
               <div className={styles.projectInfo}>
                 <h3 className={styles.projectTitle}>{project.title}</h3>
                 <p className={styles.projectDescription}>{project.description}</p>
-                
+
                 <div className={styles.techStack}>
                   <span className={styles.techLabel}>Tecnologias:</span>
                   <div className={styles.techList}>
@@ -192,8 +197,16 @@ const Project: React.FC = () => {
                     ))}
                   </div>
                 </div>
-                
-                <button className={styles.viewProjectBtn}>Ver Projecto</button>
+
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.viewProjectBtn}
+                >
+                  Ver Projecto
+                </a>
+
               </div>
             </motion.div>
           ))}
