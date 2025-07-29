@@ -123,7 +123,7 @@ export default function Contact() {
                         <li><a href="/project">Projetos</a></li>
                         <li><a href="/habilidades">Habilidades</a></li>
                         <li><a href="/sobre">Sobre mim</a></li>
-                        <li><a href="/cv.pdf" download className="cv-btn">Download CV</a></li>
+                        <li><a href="/JocaCv.pdf" download className="cv-btn">Download CV</a></li>
                     </ul>
                 </nav>
             </header>

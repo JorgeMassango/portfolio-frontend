@@ -111,7 +111,7 @@ const Dashboard = () => {
                         <a href="/habilidades" onClick={handleLinkClick}>Habilidades</a>
                         <a href="/sobre" onClick={handleLinkClick}>Sobre Mim</a>
                         <a href="/contact" onClick={handleLinkClick}>Contacto</a>
-                        <a href="/cv.pdf" download className="cv-btn" onClick={handleLinkClick}>
+                        <a href="/JocaCv.pdf" download className="cv-btn" onClick={handleLinkClick}>
                             Download CV
                         </a>
                     </div>
@@ -124,7 +124,7 @@ const Dashboard = () => {
                         <a href="/sobre">Sobre Mim</a>
                         <a href="/contact">Contacto</a>
                     </nav>
-                    <a href="/cv.pdf" download className="cv-btn">
+                    <a href="/JocaCv.pdf" download className="cv-btn">
                         Download CV
                     </a>
                 </div>

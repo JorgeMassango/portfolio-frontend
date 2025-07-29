@@ -128,7 +128,7 @@ export default function About() {
                         <li><a href="/projects">Projetos</a></li>
                         <li><a href="/habilidades">Habilidades</a></li>
                         <li><a href="/contact">Contacto</a></li>
-                        <li><a href="/cv.pdf" download className="cv-btn">Download CV</a></li>
+                        <li><a href="/JocaCv.pdf" download className="cv-btn">Download CV</a></li>
                     </ul>
                 </nav>
             </header>
