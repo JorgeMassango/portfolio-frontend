@@ -67,19 +67,19 @@ const Project: React.FC = () => {
     },
     {
       id: 3,
-      title: "Machine Sales",
-      description: "Módulo completo para visualização e gestão de carros à venda. Possui sistema de agendamento de visitas, painel administrativo e galeria de veículos com ficha técnica",
-      technologies: "React, NestJS, PostgreSQL, Supabase, JWT",
-      image: "/projecto1.png",
+      title: "TechConnect Landing",
+      description: "Landing page moderna desenvolvida com React e CSS puro. Apresenta design responsivo, visual atraente e foco em performance para representar marcas de tecnologia e startups.",
+      technologies: "React, JavaScript, CSS Puro, HTML",
+      image: "/landing-page.png",
       category: "web",
-      url: "https://machine-sales-v3.example.com"
+      url: "https://landing-page-flame-three.vercel.app"
     },
     {
       id: 4,
       title: "Sistema Educacional",
       description: "Plataforma completa de gestão educacional com sistema de inscrições, painel de controle e acompanhamento de estudantes",
       technologies: "React, Node.js, MongoDB, Express",
-      image: "/projecto3.ng",
+      image: "/projecto5.ng",
       category: "education",
       url: "https://sistema-educacional.example.com"
     },
@@ -88,7 +88,7 @@ const Project: React.FC = () => {
       title: "Blog Pessoal",
       description: "Blog pessoal com sistema de posts, comentários e gestão de conteúdo. Interface moderna e responsiva",
       technologies: "Next.js, TypeScript, Prisma, PostgreSQL",
-      image: "/projecto3",
+      image: "/projecto4",
       category: "blog",
       url: "https://blog-pessoal.example.com"
     },
