@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
-import { FaReact, FaNodeJs, FaDatabase, FaJsSquare } from 'react-icons/fa';
+import { FaReact, FaNodeJs, FaDatabase, FaJsSquare, FaJava, FaLaptopCode } from 'react-icons/fa';
 import { SiPostgresql, SiSupabase, SiNextdotjs, SiTypescript, SiPrisma, SiTailwindcss, SiJsonwebtokens, SiGoogle } from 'react-icons/si';
 import {
   FcMenu,
@@ -58,12 +58,12 @@ const Project: React.FC = () => {
     },
     {
       id: 2,
-      title: "Machine Sales",
-      description: "Módulo completo para visualização e gestão de carros à venda. Possui sistema de agendamento de visitas, painel administrativo e galeria de veículos com ficha técnica",
-      technologies: "React, NestJS, PostgreSQL, Supabase, JWT",
-      image: "/projecto2.png",
-      category: "web",
-      url: "https://machine-sales-v2.example.com"
+      title: "FastFood",
+      description: "Aplicação desktop com interface gráfica para gerenciamento de pedidos em tempo real. Permite cálculo automático de subtotal, imposto e troco com base em itens fixos do menu. Ideal para operações rápidas em estabelecimentos de fast food.",
+      technologies: "Java, Java Swing, MySQL, JDBC, NetBeans",
+      image: "/fastfood.png",
+      category: "desktop",
+      url: "FastFoodInstaller.exe"
     },
     {
       id: 3,
@@ -121,6 +121,9 @@ const Project: React.FC = () => {
       case 'tailwind':
       case 'tailwindcss':
         return <SiTailwindcss />;
+      case 'java':
+      case 'java swing':
+        return <FaJava />;
       case 'jwt':
       case 'jsonwebtoken':
         return <SiJsonwebtokens />;
@@ -129,6 +132,8 @@ const Project: React.FC = () => {
         return <SiGoogle />;
       case 'typescript':
         return <SiTypescript />;
+      case 'netbeans':
+        return <FaLaptopCode />;
       case 'javascript':
         return <FaJsSquare />;
       default:
